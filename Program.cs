@@ -21,6 +21,7 @@ namespace simplesocket
             if(!successfulPortParse)
             {
                 Console.WriteLine("The port number should be an integer");
+                return;
             }
 
             Console.WriteLine("Resolving DNS addresses ");
