@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "sqlprelogin", "sqlprelogin\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "sqlclientaspnetprelogin", "sqlclientaspnetprelogin\sqlclientaspnetprelogin.csproj", "{466A1E60-97A2-4881-86AF-EBE9F319F86A}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "sqlclientaspnetprelogin20", "sqlclientaspnetprelogin2.0\sqlclientaspnetprelogin20.csproj", "{FFC486EF-46F4-4E36-BF98-A273FD091CA0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{466A1E60-97A2-4881-86AF-EBE9F319F86A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{466A1E60-97A2-4881-86AF-EBE9F319F86A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{466A1E60-97A2-4881-86AF-EBE9F319F86A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFC486EF-46F4-4E36-BF98-A273FD091CA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFC486EF-46F4-4E36-BF98-A273FD091CA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFC486EF-46F4-4E36-BF98-A273FD091CA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFC486EF-46F4-4E36-BF98-A273FD091CA0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
