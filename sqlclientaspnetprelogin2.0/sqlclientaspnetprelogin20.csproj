@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFrameworks>netcoreapp2.1;netcoreapp2.0</TargetFrameworks>
+    <RuntimeFrameworkVersion Condition="'$(TargetFramework)' == 'netcoreapp2.1'">2.1.0-preview1-26216-03</RuntimeFrameworkVersion>
+    <RuntimeFrameworkVersion Condition="'$(TargetFramework)' == 'netcoreapp2.0'">2.0.5</RuntimeFrameworkVersion>
   </PropertyGroup>
 
   <ItemGroup>
