@@ -12,14 +12,23 @@ namespace sqlprelogin
         {
             int runCount = 100;
             long[] timetaken = new long[runCount];
-            Parallel.For(0, runCount, (i) =>
+            Task[] tasks = new Task[runCount];
+
+            for (int i = 0; i < runCount; i++)
             {
-                SQLConnection connection = new SQLConnection("ss-desktop2", 1433);
-                long sslHandShakeTime = connection.Connect();
-                timetaken[i] = sslHandShakeTime;
-            });
+                Task t = Task.Factory.StartNew((ctr) =>
+                {
+                    SQLConnection connection = new SQLConnection("ss-desktop2", 1433);
+                    long sslHandShakeTime = connection.Connect();
+                    timetaken[(int)ctr] = sslHandShakeTime;
+                }, i);
+                tasks[i] = t;
+            }
+
+            Task.WaitAll(tasks);
+
             long sum = 0;
-            for( int i = 0; i < runCount; i++)
+            for (int i = 0; i < runCount; i++)
             {
                 sum += timetaken[i];
             }
