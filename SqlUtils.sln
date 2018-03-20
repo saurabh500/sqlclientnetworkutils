@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "sqlprelogin", "sqlprelogin\sqlprelogin.csproj", "{1E43E67E-A2EA-4FEA-9FC5-51C13F21473B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "sqlclientaspnetprelogin", "sqlclientaspnetprelogin\sqlclientaspnetprelogin.csproj", "{466A1E60-97A2-4881-86AF-EBE9F319F86A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1E43E67E-A2EA-4FEA-9FC5-51C13F21473B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E43E67E-A2EA-4FEA-9FC5-51C13F21473B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E43E67E-A2EA-4FEA-9FC5-51C13F21473B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E43E67E-A2EA-4FEA-9FC5-51C13F21473B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{466A1E60-97A2-4881-86AF-EBE9F319F86A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{466A1E60-97A2-4881-86AF-EBE9F319F86A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{466A1E60-97A2-4881-86AF-EBE9F319F86A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{466A1E60-97A2-4881-86AF-EBE9F319F86A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {26767A71-3B2E-4348-A865-C556AE020C78}
+	EndGlobalSection
+EndGlobal

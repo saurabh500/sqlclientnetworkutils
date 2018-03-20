@@ -10,7 +10,7 @@ using System.Threading;
 
 namespace sqlprelogin
 {
-    internal class SQLConnection
+    public class SQLConnection
     {
         byte[] buffer = new byte[4096];
         int bufferPointer = 8; // Initialize at header len
