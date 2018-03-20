@@ -35,11 +35,11 @@ namespace sqlprelogin
                 }
                 throw new Exception($"Couldn't connect to {this._hostname} on port {this._port}");
             }
-            using (NetworkStream stream = new NetworkStream(socket)) { 
-                DoPreLoginSend(stream);
-                DoPreLoginReceive(stream);
-                DoSslHandShake(stream);
-            }
+            NetworkStream stream = new NetworkStream(socket); 
+            DoPreLoginSend(stream);
+            DoPreLoginReceive(stream);
+            DoSslHandShake(stream);
+            
         }
 
         private void DoSslHandShake(NetworkStream stream)
