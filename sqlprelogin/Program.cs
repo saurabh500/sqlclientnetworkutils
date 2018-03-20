@@ -10,14 +10,20 @@ namespace sqlprelogin
     {
         static void Main(string[] args)
         {
-            Parallel.For(0, 100, (i) =>
+            int runCount = 100;
+            long[] timetaken = new long[runCount];
+            Parallel.For(0, runCount, (i) =>
             {
-                //for (int i = 0; i < 10; i++)
-                {
-                    SQLConnection connection = new SQLConnection("ss-desktop2", 1433);
-                    connection.Connect();
-                }
+                SQLConnection connection = new SQLConnection("ss-desktop2", 1433);
+                long sslHandShakeTime = connection.Connect();
+                timetaken[i] = sslHandShakeTime;
             });
+            long sum = 0;
+            for( int i = 0; i < runCount; i++)
+            {
+                sum += timetaken[i];
+            }
+            Console.WriteLine(sum / runCount);
         }
 
     }

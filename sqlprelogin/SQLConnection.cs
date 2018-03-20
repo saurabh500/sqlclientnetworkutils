@@ -23,7 +23,7 @@ namespace sqlprelogin
             this._port = port;
         }
 
-        public void Connect()
+        public long Connect()
         {
             Socket socket = Connect(this._hostname, this._port, TimeSpan.FromSeconds(10));
             if (socket == null || !socket.Connected)
@@ -38,11 +38,11 @@ namespace sqlprelogin
             NetworkStream stream = new NetworkStream(socket); 
             DoPreLoginSend(stream);
             DoPreLoginReceive(stream);
-            DoSslHandShake(stream);
+            return DoSslHandShake(stream);
             
         }
 
-        private void DoSslHandShake(NetworkStream stream)
+        private long DoSslHandShake(NetworkStream stream)
         {
             SslOverTdsStream sslOverTdsStream = new SslOverTdsStream(stream);
             SslStream sslStream = new SslStream(sslOverTdsStream, true, new RemoteCertificateValidationCallback(ValidateServerCertificate), null);
@@ -50,7 +50,7 @@ namespace sqlprelogin
             sw.Start();
             sslStream.AuthenticateAsClient(this._hostname);
             sw.Stop();
-            Console.WriteLine(sw.ElapsedMilliseconds);
+            return sw.ElapsedMilliseconds;
         }
 
         private bool ValidateServerCertificate(object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors)
