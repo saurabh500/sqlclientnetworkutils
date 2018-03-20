@@ -17,11 +17,20 @@ namespace sqlclientaspnetprelogin
             BuildWebHost(args).Run();
         }
 
-        public static IWebHost BuildWebHost(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
+        public static IWebHost BuildWebHost(string[] args)
+        {
+            var config = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json", optional: false)
+                .AddCommandLine(args)
+                .Build();
+
+            return WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
+                .UseConfiguration(config)
                 .UseUrls("http://0.0.0.0:8080")
                 .Build();
+        }
 
     }
 }
