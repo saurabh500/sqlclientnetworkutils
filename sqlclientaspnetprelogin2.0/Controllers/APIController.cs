@@ -28,9 +28,12 @@ namespace sqlclientaspnetprelogin.Controllers
         [HttpGet]
         public long Index()
         {
-            SQLConnection connection = new SQLConnection(this._host, this._port);
-            long timeTaken = connection.Connect();
-            return timeTaken;
+            long totalTimeTaken = 0;
+            for(int i = 0; i < 30; i++) { 
+                SQLConnection connection = new SQLConnection(this._host, this._port);
+                totalTimeTaken += connection.Connect();
+            }
+            return totalTimeTaken;
         }
     }
 }
